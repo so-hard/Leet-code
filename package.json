@@ -1,0 +1,15 @@
+{
+  "name": "leet_code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "twoSum.js",
+  "dependencies": {
+    "jest": "^24.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
