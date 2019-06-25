@@ -1,4 +1,4 @@
-const twoSum = require('./../js/twoSum');
+import {twoSum} from './../js/twoSum'
 
 const testAray = [
     {

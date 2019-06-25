@@ -1,25 +1,20 @@
 
-let twoSum = function ([nums, target]) {
-    let hash = {},
-        result,
-        diff;
+let twoSum =  ([nums, target]) => {
+    let result;
     nums.forEach(
         (value, index) => {
-            if (result) {
+            if(result){
                 return
-            } else {
-                diff = target - value
-                if (value in hash) {
-                    result = [hash[value], index]
-                }
-                else {
-                    hash[diff] = index
+            }else{
+                for(let i = index + 1; i < nums.length; i++) {
+                    if (value + nums[i] == target) {
+                        result = [index, i]
+                    }
                 }
             }
         }
     )
+    return result
 };
 
-twoSum([[1, 2, 5, 8], 3])
-
-module.exports = twoSum
+export {twoSum}
