@@ -11,7 +11,7 @@
 // 因为 nums[0] + nums[1] = 2 + 7 = 9
 // 所以返回 [0, 1]
 
-
+//双层循环解决
 let twoSum = function (nums, target) {
     let result;
     nums.forEach(
@@ -40,18 +40,17 @@ let twoSum = function (nums, target) {
 // 输出：7 -> 0 -> 8
 // 原因：342 + 465 = 807
 var addTwoNumbers = function (l1, l2) {
-    let listNode = new ListNode,
-        l = listNode,
+    let listNode = new ListNode,//初始化一个节点
+        l = listNode,//指向初始化节点
         num,
-        flag = 0;
+        flag = 0;//进位
     do {
-        let val1 = l1 == null ? 0 : l1.val,
+        let val1 = l1 == null ? 0 : l1.val,//获取l1节点的值如果节点为空则为0
             val2 = l2 == null ? 0 : l2.val;
-        l1 = l1 == null ? null : node1.next
+        l1 = l1 == null ? null : l1.next//指向下一个节点
         l2 = l2 == null ? null : l2.next
         num = val1 + val2 + flag
-        flag = parseInt(num / 10)
-        console.log(val1, val2, flag, num)
+        flag = parseInt(num / 10)//判断是否进位
         l = l.next = new ListNode(num % 10)
     } while (l1 || l2);
     if (flag == 1) {
@@ -59,4 +58,32 @@ var addTwoNumbers = function (l1, l2) {
     }
     return listNode.next
 };
+```
+
+## 无重复字符的最长子串
+
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+
+```js
+
+//输入: "pwwkew"
+// 输出: 3
+// 解释: 因为无重复字符的最长子串是 "wke"，所以其长度 为 3。
+//      请注意，你的答案必须是 子串 的长度，"pwke" 是 一个子序列，不是子串。
+
+
+// 1 判断传入的字符串长度，等于0直接返回0，等于1直接返回1
+// 2. 截取字符串，判断下一个字符是否重复
+//3. 如果重复替换其实位置
+let strLengthFun = (s) =>{
+    let start = 0, end = 1,max = 0,len = s.length;
+    while(end <len){
+        let sonStr = s.slice(start,end);
+        let repeatPlace = sonStr.indexOf(s[end]);
+        start = repeatPlace == -1?start: start+ 1+repeatPlace;
+        end++;
+        max = end - start> max? end-start : max 
+    }
+    return max = len == 1? 1: max
+}
 ```
