@@ -1,9 +1,9 @@
-let collectReStr = (str)=> {
+let collectReStr = (str) => {
     let map = new Map();
     for (const list of str) {
-        map.has(list) ?map.set(list,map.get(list)+1) : map.set(list,1)
+        map.has(list) ? map.set(list, map.get(list) + 1) : map.set(list, 1)
     }
     return [].concat(...map).join("")
 }
 
-collectReStr("asdfsasf")
+console.log(collectReStr("asdfsasf"))
